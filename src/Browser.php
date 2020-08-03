@@ -103,4 +103,33 @@ class Browser
     {
         return md5($url);
     }
+    
+    public function downloadToFile($url, $saveFile)
+    {
+
+        $fp = fopen($saveFile, "w+");
+
+        $ch = curl_init($url);
+
+        curl_setopt($ch, CURLOPT_USERAGENT, $this->user_agent);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_HEADER, 0);
+
+        curl_setopt($ch, CURLOPT_COOKIEJAR, $this->cookie_file);
+        curl_setopt($ch, CURLOPT_COOKIEFILE, $this->cookie_file);
+
+        //curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4);
+
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_FILE, $fp);
+
+        $result = curl_exec($ch);
+        curl_close($ch);
+        fclose($fp);
+
+        return $result;
+    }
 }

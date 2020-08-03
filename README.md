@@ -1,3 +1,34 @@
+# 🤝 Welcome to youtube-downloader
+
+This was forked from [Athlon1600/youtube-downloader](https://github.com/Athlon1600/youtube-downloader)
+
+## 🍴 Why I forked?
+
+To add a php script where the user can insert the links of the videos he wants and the script downloads the videos directly to a local folder "/videos".
+
+## 🧰 Prerequisites
+Make sure you have installed all of the following prerequisites on your machine:
+* **[Git](https://git-scm.com/downloads)**;
+* **[PHP](https://www.php.net/downloads)**;
+* **[Composer](https://getcomposer.org/download/)**.
+
+## 🔧 Install
+```sh
+$ git clone https://github.com/rhenangarcia/youtube-downloader
+$ cd youtube-downloader/
+$ php composer.phar install
+$ mkdir videos/
+```
+
+## ⚙️ Usage
+1. Edit [youtube-downloader.php](https://github.com/rhenangarcia/youtube-downloader/blob/master/youtube-downloader.php);
+1. Add the links of the videos you want to download to the `$ytLinks` [array](https://github.com/rhenangarcia/youtube-downloader/blob/master/youtube-downloader.php#L20);
+1. Change the quality of the videos to download in `$ytFormat` [variable](https://github.com/rhenangarcia/youtube-downloader/blob/master/youtube-downloader.php#L21);
+1. Save [youtube-downloader.php](https://github.com/rhenangarcia/youtube-downloader/blob/master/youtube-downloader.php);
+1. Run `$ php youtube-downloader.php`.
+
+## 👇 Original README
+
 <center>
   
 ![](https://img.shields.io/packagist/dt/Athlon1600/youtube-downloader.svg) ![](https://img.shields.io/github/last-commit/Athlon1600/youtube-downloader.svg) ![](https://img.shields.io/github/license/Athlon1600/youtube-downloader.svg)
